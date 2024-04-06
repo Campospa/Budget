@@ -58,6 +58,12 @@ def index():
 def register():
     if request.method == 'POST':
         username = request.form.get('username')
+
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            flash('Username already exists. Please choose a different one.', 'danger')
+            return redirect(url_for('register'))
+        
         password = request.form.get('password')
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         user = User(username=username, password=hashed_password)
@@ -188,8 +194,7 @@ def budget(): # the function name must be the same as the template name
         # Fetch all expenses from the database to calculate the total
         expenses = Expenses.query.all()
         total_amount = sum(expense.amount for expense in expenses)
-        db.session.add(total_amount) # test
-        db.session.commit() # test
+        
 
         return render_template('budget.html', total_amount=total_amount, expenses=expenses)
 
