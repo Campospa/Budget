@@ -1,0 +1,16 @@
+body {
+    background-image: url('/static/budget_image.jpg'); /* Replace 'background.jpg' with your image file's name */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.welcome-message {
+    font-size: 60px; /* Adjust the size as needed */
+    font-family: 'Arial', sans-serif; /* Change the font family as needed */
+}
+
+
+.welcome-message {
+    text-align: center;
+}
+

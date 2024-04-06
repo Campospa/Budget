@@ -1,0 +1,9 @@
+body {
+    background-image: url('/static/mortgage.jpg'); /* Replace 'background.jpg' with your image file's name */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    
+
+}

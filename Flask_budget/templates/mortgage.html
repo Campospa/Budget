@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Mortgage = My <Mortgage>% endblock %</Mortgage>
+
+{% block content %}
+    <h1>Mortgage Calculator</h1>
+    <form method="post">
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="number" name="loan_amount" required><br>
+        <label for="annual_interest_rate">Annual Interest Rate (%):</label>
+        <input type="number" name="annual_interest_rate" required><br>
+        <label for="loan_term_years">Loan Term in Years:</label>
+        <input type="number" name="loan_term_years" required><br> 
+        <button type="submit">Calculate</button> 
+    </form>
+    <a href="{{ url_for('view_mortgage') }}">View Mortgage</a>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/budget.css') }}">
+    {% endblock %}
+{% endblock %}
+
+
+    

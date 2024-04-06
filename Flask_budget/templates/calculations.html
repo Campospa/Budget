@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Budget = My <Budget>% endblock %</Budget>
+
+{% block content %}
+    <h1>investment</h1>
+    <table border="1">
+        <tr>
+            <th>Principal</th>
+            <th>Additional Contribution</th>
+            <th>Interest Rate</th>
+            <th>Years</th>
+            <th>Final Amount</th>
+        </tr>
+        {% for i in investment %}
+        <tr>
+            <td>{{ i.principal }}</td>
+            <td>{{ i.additional_contribution }}</td>
+            <td>{{ i.interest_rate }}</td>
+            <td>{{ i.years }}</td>
+            <td>{{ i.final_amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+{% endblock %}
+    
+
+            

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Mortgage = My <Budget>% endblock %</Budget>
+
+{% block content %}
+    <h1>Mortgage</h1>
+    <table border="1">
+        <tr>
+            <th>Loan Amount</th>
+            <th>Annual Interest Rate</th>
+            <th>Loan Term in Years</th>
+            <th>Monthy Payment</th>
+        </tr>
+        {% for m in mortgage_calculator %}
+        <tr>
+            <td>{{ m.loan_amount }}</td>
+            <td>{{ m.annual_interest_rate }}</td>
+            <td>{{ m.loan_term_years }}</td>
+            <td>{{ m.monthly_payment }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+{% endblock %}
+    
+
+            

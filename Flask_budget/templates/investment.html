@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Investment = My <Investment>% endblock %</Investment>
+
+{% block content %}
+    <h1>Investment Calculator</h1>
+    <form method="post">
+        <label for="principal">Principal:</label>
+        <input type="number" name="principal" required><br>
+        <label for="interest_rate">Interest Rate (%):</label>
+        <input type="number" name="interest_rate" required><br>
+        <label for="years">Years:</label>
+        <input type="number" name="years" required><br> 
+        <label for="additional_contribution">Additional contribution:</label>
+        <input type="number" name="additional_contribution" required><br>
+        <button type="submit">Calculate</button> 
+    </form>
+    <a href="{{ url_for('view_calculations') }}">View Calculations</a>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/budget.css') }}">
+    {% endblock %}
+{% endblock %}
+
+
+    
